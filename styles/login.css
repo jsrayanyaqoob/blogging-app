@@ -1,0 +1,66 @@
+body{
+    background: rgb(247,247,247);
+    background: linear-gradient(100deg, rgba(247,247,247,1) 35%, rgba(255,255,255,1) 70%);
+    overflow: hidden;   
+}
+
+.heroContainer{
+    height: 90vh;
+}
+
+.registerCard{
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 29%;
+    height: 90%;
+ 
+}
+
+.registerHead{
+    color: #333333;
+    font-family: "Poppins", serif;
+}
+
+.inputLabel{
+    color: #555555;
+}
+
+.inputField{
+    color: #333333;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    width: 250px;
+    padding: 6px 10px;
+}
+
+.inputField::placeholder{
+    color: #999999;
+}
+
+.loginAnchor{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.loginAnchor a{
+    text-decoration: none;
+}
+
+.registerBtn{
+  background-color: #A020F0;
+  color: white;
+  padding: 8px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px #A020F0;
+  width: 250px;
+  text-align: center;
+}
+
+.registerBtn:hover{
+    box-shadow: 0px 0px 10px #A020F0, 0px 0px 10px #A020F0;
+};
