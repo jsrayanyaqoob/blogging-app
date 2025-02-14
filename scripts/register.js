@@ -8,12 +8,12 @@ const password = document.querySelector("#password")
 const signupBtn = document.querySelector("#singupBtn")
 
 
-const imgUrl = ""
+let imgUrl;
 
 
 let myWidget = cloudinary.createUploadWidget({
   cloudName: 'duamkmvwc', 
-  uploadPreset: 'my_preset'}, (error, result) => { 
+  uploadPreset: 'blogging'}, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info); 
       imgUrl = result.info.secure_url
@@ -33,30 +33,27 @@ signupBtn.addEventListener('click' , async (event) =>{
   console.log(email.value);
   console.log(password.value);
 
-  
 
-
-
-  try {
-    const docRef = await addDoc(collection(db, "users"), {
-      fullname: fullName.value,
-      email: email.value, 
-      password: password.value
-    });
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user.uid);
-      window.location = "index.html"
-    })
-    .catch((error) => {
-      const errorMessage = error.message;
-      console.log(errorMessage);
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-
-
+  createUserWithEmailAndPassword(auth, email.value, password.value)
+  .then(async (userCredential) => {
+    const user = userCredential.user;
+    console.log(user.uid);
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        fullname: fullName.value,
+        email: email.value, 
+        password: password.value,
+        imgUrl: imgUrl,
+        userUid: user.uid,
+      });
+      console.log("Document written with ID: ", docRef.id);
+      window.location = "login.html"
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+    console.log(errorMessage);
+  });
 })

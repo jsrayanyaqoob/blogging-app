@@ -15,7 +15,7 @@ loginBtn.addEventListener('click' , event =>{
 signInWithEmailAndPassword(auth, email.value, password.value)
   .then((userCredential) => {
     const user = userCredential.user;
-    window.location = "index.html"
+    window.location = "dashboard.html"
     
   })
   .catch((error) => {
