@@ -1,3 +1,7 @@
+body {
+    background-color: #e0dfdf;
+}
+
 .logoHeading{
     position: relative;
     top: 5px;
@@ -10,15 +14,16 @@
     
 }
 
-.divAnchors{
-    width: 550px;
+.divAnchors a{
+    font-weight: 500;
+    padding: 0px 5px;
+    margin: 0px 5px;
+    color: #fff;
+    text-decoration: none;
 }
 
-.inputField{
-    width: 500px;
-    border: none;
-    padding: 5.5px;
-    border-radius: 12px;
+.divAnchors a:hover{
+    text-decoration: underline;
 }
 
 .stylingBtn{
@@ -41,4 +46,22 @@
     background-color: #fff;
     color: #000;
     border: 1px solid #fff;
+}
+
+.userInformation{
+    color: #727171;
+    font-size: 14px;
+}
+
+.blogDescription{
+    color: #373737;
+}
+
+.blogAnchorTag a{
+    color: rgb(187, 0, 255);
+    text-decoration: none;
+}
+
+.TitleHead{
+    width: 100% !important;
 }

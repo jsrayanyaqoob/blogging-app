@@ -32,8 +32,9 @@ body{
     height: 35px;
     width: 100px; 
     margin-right: 5px;
-    background-color: rgba(255, 255, 255, 0.685);
-    color: #494949;
+    border: 1px solid rgba(255, 0, 0, 0.708);
+    color: #ff0000;
+    background-color: rgb(26, 26, 26);
 }
 
 .blogsHeading{
@@ -121,4 +122,8 @@ body{
     color: #a6a6a6;
     font-size: 10px;
     font-family: "Poppins";
+}
+
+.dateAndMonth{
+    color: #828282;
 }

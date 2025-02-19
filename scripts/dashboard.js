@@ -43,16 +43,27 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 
 addBlogs.addEventListener('click' , async event => {
     event.preventDefault()     
-
+    
     let userInfo = await getData()
 
+
+    let date = new Date()
+    
+    const day = date.getDate()
+    console.log(day);
+    
+    let months = ["Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"]
+    
+    let monthName = months[date.getMonth()]; 
+    console.log(monthName); 
+    
     try {
     const docRef = await addDoc(collection(db, "blogs"), {
         Title: title.value,
         Description: description.value,
         currentUserUid: auth.currentUser.uid,
         blogImage: blogImage,
-        date: Timestamp.fromDate(new Date()),
+        date: `${day} ${monthName}`,
         userName: userInfo.fullname,
     });
     console.log("Document written with ID: ", docRef.id);
@@ -146,10 +157,11 @@ function renderingData(arr) {
         blogDiv.innerHTML += `
         <div class="userBlogContent">
             <img src="${item.blogImage}" alt="" width="125px" height="125px">
-            <h2 class="titleStyling">Title: ${item.Title}</h2>
-            <p class="descriptionStyling">Description: ${item.Description}</p>
-            <div class="userInformation">
+            <h2 class="titleStyling">${item.Title}</h2>
+            <p class="descriptionStyling">${item.Description}</p>
+            <div class="userInformation d-flex justify-content-between">
                 <span class="posterName">Posted by ${item.userName}</span>
+                <span class="posterName">Posted on <span class="dateAndMonth">${item.date} ${item.monthName}</span></span>
             </div>
         </div>
         `

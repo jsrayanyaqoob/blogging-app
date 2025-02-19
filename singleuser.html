@@ -1,18 +1,77 @@
 <!doctype html>
 <html lang="en">
   <head>
+      <!-- Fontawesome Integrity -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer"/>
+  <!-- Fontawesome Integrity Ended -->
+  <!-- Open Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <!-- Open Sans Font Ended  -->
+  <!-- Ubuntu Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Ubuntu Font Ended -->
+  <!-- Atkison Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <!-- Atkison Font Ended -->
+  <!-- Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Poppins Font Ended -->
+  <!-- SofiaSans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+  <!-- SofiaSand Font Ended -->
+  <!-- Satisfy Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <!-- Satisfy Font Ended -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Single User --- Blogger</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap ended -->
     <link rel="stylesheet" href="./styles/singleuser.css">
   </head>
   <body>
-    <h1>Hello, world!</h1>
-   
+    <nav class="bg-black text-white px-3 pt-1 d-flex align-items-center justify-content-between">
+      <div class="logoHeading">
+        <p class="fs-2 mt-2">Innovate</p>
+      </div>
+      
+      <div class="divAnchors text-white">
+        <a href="loggedIn.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+      </div>
+      
+      <div class="userContent d-flex gap-3">
+        <p id="userName" class="mt-2 fw-semibold"></p>
+        <img src="" id="userImage" alt="" width="36.5px" height="40px" style="border-radius: 50%;">
+        <div class="logoutBtn mt-1">
+          <button class="logoutBtn fw-semibold" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        </div>
+      </div>
+    </nav>
+    
+    <h2 class="bg-white py-2 px-4"><a href="loggedIn.html" style="text-decoration: none; color: #890af8;"> < Back To All Blogs</a></h2>
 
-    <script src="./scripts/singleuser.js"></script>
+    <div id="headingContainerContent" class="px-4 mt-3"></div>
+    <div id="heroContainerContentTaker" class="d-flex mt-2 justify-content-between px-4"></div>
+      
+
+
+    <script type="module" src="./scripts/singleuser.js"></script>
   </body>
 </html>
