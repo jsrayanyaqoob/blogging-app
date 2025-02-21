@@ -53,8 +53,10 @@ addBlogs.addEventListener('click' , async event => {
     console.log(day);
     
     let months = ["Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"]
+
+    let monthDate = new Date()
     
-    let monthName = months[date.getMonth()]; 
+    let monthName = months[monthDate.getMonth()]; 
     console.log(monthName); 
     
     try {
@@ -161,7 +163,7 @@ function renderingData(arr) {
             <p class="descriptionStyling">${item.Description}</p>
             <div class="userInformation d-flex justify-content-between">
                 <span class="posterName">Posted by ${item.userName}</span>
-                <span class="posterName">Posted on <span class="dateAndMonth">${item.date} ${item.monthName}</span></span>
+                <span class="posterName">Posted on <span class="dateAndMonth">${item.date}</span></span>
             </div>
         </div>
         `

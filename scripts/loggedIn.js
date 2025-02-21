@@ -72,7 +72,7 @@ function renderItems(arr) {
         <img src="${item.blogImage}" alt="" width="75px" height="80px" style="border-radius: 12px;">
         <div class="blogInfo">
           <h5 class="TitleHead">${item.Title}</h5>
-          <span class="userInformation fw-semibold">${item.userName} - ${item.date} ${item.monthName}</span>
+          <span class="userInformation fw-semibold">${item.userName} - ${item.date}</span>
         </div>
       </div>
       <div class="blogDescription mt-3">

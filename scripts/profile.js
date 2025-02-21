@@ -1,6 +1,6 @@
 import { onAuthStateChanged, signOut, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 import { auth, db } from "./firebaseconfig.js";
-import { collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { collection, getDocs, query, where, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
 const userName = document.querySelector("#userName");
 const userImage = document.querySelector("#userImage");
@@ -107,15 +107,40 @@ saveChanges.addEventListener('click', async (event) => {
 
 
 
-
-
-
 // Username Update
 
-saveBtn.addEventListener('click' , event => {
+saveBtn.addEventListener('click' , async event => {
     event.preventDefault()
-
-    const updatedUsername = newUserNameUpdate.value
-    updatedUsername = userName
-    alert("chal gya")
+    
+    
+     onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            const uid = user.uid;
+            console.log(uid)
+            
+        } else {
+            window.location = "login.html";
+        }
+    });
+    
+    const newUserName = newUserNameUpdate.value
+    userName.innerHTML = newUserName
+    
+    // async function getDocId() {
+        // }
+        let documentId;
+        
+        const q = query(collection(db, "users"), where("userUid", "==", auth.currentUser.uid))
+    
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            documentId = doc.id;
+        });
+    
+        const users = doc(db, "users", documentId);
+        
+        await updateDoc(users, {
+            fullname: newUserName
+        });
+    
 })

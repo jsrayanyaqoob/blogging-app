@@ -115,7 +115,7 @@ function renderItems(userData, blogData) {
                             <img src="${blog.blogImage}" alt="" width="75px" height="80px" style="border-radius: 12px;">
                             <div class="blogInfo">
                                 <h5 class="TitleHead">${blog.Title}</h5>
-                                <span class="userInformation fw-semibold">${blog.userName} - ${blog.date} ${blog.monthName}</span>
+                                <span class="userInformation fw-semibold">${blog.userName} - ${blog.date}</span>
                             </div>
                         </div>
                         <div class="blogDescription mt-3">
